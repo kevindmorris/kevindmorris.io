@@ -30,12 +30,12 @@ export default function NavigationHeader() {
 
   return (
     <>
-      <header
+      <nav
         style={{
           height: 56,
           position: "sticky",
           top: 0,
-          backgroundColor: alpha(theme.palette.background.paper, 0.5),
+          backgroundColor: "rgba(255, 255, 255, 0.5)",
           backdropFilter: "blur(8px)",
           borderBottom: "1px solid",
           borderColor: theme.palette.divider,
@@ -162,7 +162,7 @@ export default function NavigationHeader() {
             </IconButton>
           </div>
         </Container>
-      </header>
+      </nav>
 
       <ClickAwayListener
         onClickAway={(event) => {
@@ -179,7 +179,7 @@ export default function NavigationHeader() {
           sx={{
             position: "fixed",
             top: 56,
-            backgroundColor: alpha(theme.palette.background.paper, 0.5),
+            backgroundColor: "rgba(255, 255, 255, 0.5)",
             backdropFilter: "blur(8px)",
             borderBottom: "1px solid",
             borderColor: theme.palette.divider,
