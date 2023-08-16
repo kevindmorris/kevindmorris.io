@@ -5,32 +5,22 @@ import Link from "next/link";
 import React from "react";
 import logo from "../kevin-logo.png";
 import {
-  AppBar,
   Box,
   Button,
-  ButtonBase,
-  Chip,
   ClickAwayListener,
   Collapse,
   Container,
   Divider,
-  Drawer,
-  Fade,
   IconButton,
   List,
   ListItemText,
   MenuItem,
-  Paper,
-  Popper,
-  Slide,
   Typography,
   alpha,
   capitalize,
-  debounce,
-  styled,
   useTheme,
 } from "@mui/material";
-import { Clear, GitHub, LinkedIn, Menu, TableRows } from "@mui/icons-material";
+import { Clear, GitHub, LinkedIn, Menu } from "@mui/icons-material";
 
 export default function NavigationHeader() {
   const theme = useTheme();
