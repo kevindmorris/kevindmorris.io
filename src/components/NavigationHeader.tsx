@@ -37,6 +37,7 @@ export default function NavigationHeader() {
           top: 0,
           backgroundColor: "rgba(255, 255, 255, 0.5)",
           backdropFilter: "blur(8px)",
+          WebkitBackdropFilter: "blur(8px)",
           borderBottom: "1px solid",
           borderColor: theme.palette.divider,
         }}
