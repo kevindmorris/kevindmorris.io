@@ -9,6 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "kevindmorris.dev | Kevin Morris",
   description: "The portfolio of Kevin Morris.",
+  themeColor: "#8A89E7",
 };
 
 export default function RootLayout({
