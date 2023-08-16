@@ -2,6 +2,7 @@ import NavigationHeader from "@/components/NavigationHeader";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import ThemeRegistry from "./ThemeRegistry";
+import { Container } from "@mui/material";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +21,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeRegistry options={{ key: "mui" }}>
           <NavigationHeader />
-          {children}
+          <Container>{children}</Container>
         </ThemeRegistry>
       </body>
     </html>
