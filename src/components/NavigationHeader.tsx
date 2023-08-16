@@ -30,7 +30,7 @@ export default function NavigationHeader() {
 
   return (
     <>
-      <nav
+      <header
         style={{
           height: 56,
           position: "sticky",
@@ -162,7 +162,7 @@ export default function NavigationHeader() {
             </IconButton>
           </div>
         </Container>
-      </nav>
+      </header>
 
       <ClickAwayListener
         onClickAway={(event) => {
