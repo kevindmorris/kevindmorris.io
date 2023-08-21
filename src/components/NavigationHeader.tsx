@@ -40,6 +40,7 @@ export default function NavigationHeader() {
           WebkitBackdropFilter: "blur(8px)",
           borderBottom: "1px solid",
           borderColor: theme.palette.divider,
+          zIndex: theme.zIndex.appBar,
         }}
       >
         <Container
