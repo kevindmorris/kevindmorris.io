@@ -88,12 +88,12 @@ export default function Page() {
 
       <List sx={{ width: "max-content", maxWidth: "100vw" }}>
         <Link
-          href="/professional"
+          href="/experiences"
           style={{ textDecoration: "none", color: "inherit" }}
         >
           <ListItemButton>
             <ListItemText
-              primary="Professional"
+              primary="Experiences"
               secondary="Find out more about my professional and educational experiences..."
             />
           </ListItemButton>

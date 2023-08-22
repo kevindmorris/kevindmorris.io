@@ -6,6 +6,10 @@ const theme = createTheme({
       main: "#8A89E7",
     },
   },
+  typography: {
+    fontFamily:
+      "Optimistic Display,-apple-system,ui-sans-serif,system-ui,sans-serif",
+  },
 });
 
 export default theme;

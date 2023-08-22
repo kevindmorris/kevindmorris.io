@@ -75,7 +75,7 @@ export default function NavigationHeader() {
                 flexDirection: "column",
               }}
             >
-              <Typography variant="button" color="text.disabled">
+              <Typography variant="button" color="text.disabled" fontFamily="sans-serif">
                 Kevin Morris
               </Typography>
               <Typography
@@ -96,7 +96,7 @@ export default function NavigationHeader() {
               gap: "inherit",
             }}
           >
-            {["professional", "projects"].map((route) => (
+            {["experiences", "projects"].map((route) => (
               <Link key={route} href={`/${route}`}>
                 <Button size="small">{capitalize(route)}</Button>
               </Link>
@@ -199,7 +199,7 @@ export default function NavigationHeader() {
               "& .MuiTouchRipple-root": { color: theme.palette.primary.main },
             }}
           >
-            {["profile", "professional", "projects"].map((route) => (
+            {["experiences", "projects"].map((route) => (
               <Link
                 key={route}
                 href={`/${route}`}
