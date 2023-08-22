@@ -46,10 +46,12 @@ export default function Page() {
     () =>
       repos.filter(
         (repos) =>
-          repos.name.includes(value) ||
+          repos.name.includes(value.toLowerCase()) ||
           (repos.description &&
-            repos.description.toLowerCase().includes(value)) ||
-          repos.topics.some((topic) => topic.toLowerCase().includes(value))
+            repos.description.toLowerCase().includes(value.toLowerCase())) ||
+          repos.topics.some((topic) =>
+            topic.toLowerCase().includes(value.toLowerCase())
+          )
       ),
     [value, repos]
   );
