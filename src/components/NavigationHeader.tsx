@@ -96,7 +96,7 @@ export default function NavigationHeader() {
               gap: "inherit",
             }}
           >
-            {["profile", "professional", "projects"].map((route) => (
+            {["professional", "projects"].map((route) => (
               <Link key={route} href={`/${route}`}>
                 <Button size="small">{capitalize(route)}</Button>
               </Link>
