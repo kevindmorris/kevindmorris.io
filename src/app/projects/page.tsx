@@ -71,6 +71,7 @@ export default function Page() {
         variant="standard"
         placeholder="Filter Repositories..."
         fullWidth
+        spellCheck={false}
       />
       <List>
         {filteredRepos.map((repo) => (

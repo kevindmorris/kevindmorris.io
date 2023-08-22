@@ -34,6 +34,10 @@ export default function GitHubUser(user: GitHubUserObject) {
               padding: theme.spacing(2),
               display: "flex",
               gap: theme.spacing(2),
+              transition: "all 0.5s ease",
+              "&:hover": {
+                filter: `drop-shadow(0px 0px 1px ${theme.palette.primary.main})`,
+              },
             }}
           >
             <Avatar sx={{ width: 150, height: 150, opacity: 0.8 }}>
@@ -48,28 +52,28 @@ export default function GitHubUser(user: GitHubUserObject) {
                 <ListItemText
                   primary={`${user.name} | ${user.login}`}
                   primaryTypographyProps={{ variant: "h6" }}
-                />
-              </ListItem>
-              <ListItem disableGutters disablePadding>
-                <ListItemText
-                  primary={user.bio}
-                  primaryTypographyProps={{
+                  secondary={user.bio}
+                  secondaryTypographyProps={{
                     variant: "subtitle1",
-                    color: "text.secondary",
                   }}
                 />
               </ListItem>
               <ListItem disableGutters disablePadding>
-                <ListItemIcon sx={{ minWidth: 25 }}>
-                  <Book fontSize="small" />
-                </ListItemIcon>
-                <ListItemText primary={user.public_repos} />
-              </ListItem>
-              <ListItem disableGutters disablePadding>
-                <ListItemIcon sx={{ minWidth: 25 }}>
-                  <People fontSize="small" />
-                </ListItemIcon>
-                <ListItemText primary={user.followers} />
+                <Book fontSize="small" sx={{ color: "text.secondary" }} />
+                <Typography ml={0.5} color="text.secondary">
+                  {user.public_repos}
+                </Typography>
+
+                <Divider
+                  orientation="vertical"
+                  flexItem
+                  sx={{ mx: theme.spacing(1) }}
+                />
+
+                <People fontSize="small" sx={{ color: "text.secondary" }} />
+                <Typography ml={0.5} color="text.secondary">
+                  {user.followers}
+                </Typography>
               </ListItem>
             </List>
           </Paper>
@@ -104,7 +108,6 @@ export default function GitHubUser(user: GitHubUserObject) {
                 secondary={user.bio}
                 secondaryTypographyProps={{
                   color: "text.secondary",
-                //   noWrap: true,
                 }}
               />
             </ListItem>

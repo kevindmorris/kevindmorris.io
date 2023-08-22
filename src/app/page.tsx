@@ -118,6 +118,7 @@ export default function Page() {
         direction="row"
         justifyContent="center"
         mt="auto"
+        pt={theme.spacing(3)}
       >
         {skills.map((s) => (
           <Link key={s.id} href={s.href}>
