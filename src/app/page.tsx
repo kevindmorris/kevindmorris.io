@@ -115,7 +115,7 @@ export default function Page() {
         </Link>
       </List>
 
-      {/* <Stack
+      <Stack
         spacing={2}
         useFlexGap
         flexWrap="wrap"
@@ -124,9 +124,9 @@ export default function Page() {
         mt="auto"
       >
         {skills.map((s) => (
-          <img key={s.name} src={s.src} style={{ height: 45 }} />
+          <Image key={s.name} src={s.src} style={{ height: 45 }} alt="" />
         ))}
-      </Stack> */}
+      </Stack>
     </div>
   );
 }
