@@ -30,19 +30,34 @@ import storybook from "../assets/storybook.png";
 import typescript from "../assets/typescript.png";
 
 const skills = [
-  { id: "css", src: css },
-  { id: "git", src: git },
-  { id: "html", src: html },
-  { id: "javascript", src: javascript },
-  { id: "mui", src: mui },
-  { id: "nextjs", src: nextjs },
-  { id: "python", src: python },
-  { id: "r", src: r },
-  { id: "react", src: react },
-  { id: "git", src: git },
-  { id: "redux", src: redux },
-  { id: "storybook", src: storybook },
-  { id: "typescript", src: typescript },
+  {
+    id: "css",
+    src: css,
+    href: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+  },
+  { id: "git", src: git, href: "https://git-scm.com/" },
+  {
+    id: "html",
+    src: html,
+    href: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+  },
+  {
+    id: "javascript",
+    src: javascript,
+    href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+  },
+  { id: "mui", src: mui, href: "https://mui.com/" },
+  { id: "nextjs", src: nextjs, href: "https://nextjs.org/" },
+  { id: "python", src: python, href: "https://www.python.org/" },
+  { id: "r", src: r, href: "https://www.r-project.org/" },
+  { id: "react", src: react, href: "https://react.dev/" },
+  { id: "redux", src: redux, href: "https://redux.js.org/" },
+  { id: "storybook", src: storybook, href: "https://storybook.js.org/" },
+  {
+    id: "typescript",
+    src: typescript,
+    href: "https://www.typescriptlang.org/",
+  },
 ];
 
 export default function Page() {
@@ -67,8 +82,8 @@ export default function Page() {
         Welcome to the personal site of Kevin Morris.
       </Typography>
       <Typography variant="h6" textAlign="center">
-        I work as a Software Developer and Data Scientist who enjoys building
-        data driven applications.
+        I work as a Software Developer and Data Scientist, finding enjoyment in
+        the development of data-driven applications.
       </Typography>
 
       <List sx={{ width: "max-content", maxWidth: "100vw" }}>
@@ -105,7 +120,9 @@ export default function Page() {
         mt="auto"
       >
         {skills.map((s) => (
-          <Image key={s.id} src={s.src} alt="" style={{ height: 45, width: "auto" }} />
+          <Link key={s.id} href={s.href}>
+            <Image src={s.src} alt="" style={{ height: 45, width: "auto" }} />
+          </Link>
         ))}
       </Stack>
     </div>
