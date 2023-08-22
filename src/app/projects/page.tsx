@@ -15,15 +15,7 @@ import GitHubUser from "./GitHubUser";
 
 export default function Page() {
   const [loading, setLoading] = React.useState(false);
-  const [user, setUser] = React.useState<GitHubUserObject>({
-    avatar_url: "",
-    bio: "",
-    followers: 0,
-    html_url: "",
-    login: "",
-    name: "",
-    public_repos: 0,
-  });
+  const [user, setUser] = React.useState<GitHubUserObject>();
   const [repos, setRepos] = React.useState<GitHubRepositoryObject[]>([]);
   const [value, setValue] = React.useState<string>("");
 
@@ -61,6 +53,8 @@ export default function Page() {
       ),
     [value, repos]
   );
+
+  if (!user) return null;
 
   if (loading) return <CircularProgress />;
 
