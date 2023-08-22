@@ -1,6 +1,6 @@
 {
-  "name": "kevindmorris.dev",
-  "version": "0.0.0",
+  "name": "kevindmorris.io",
+  "version": "1.0.0",
   "private": false,
   "scripts": {
     "dev": "next dev",
