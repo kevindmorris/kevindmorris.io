@@ -12,6 +12,7 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
+import Image from "next/image";
 import Link from "next/link";
 
 const skills = [
@@ -74,11 +75,13 @@ export default function Page() {
         paddingBottom: theme.spacing(4),
       }}
     >
-      <Avatar
-        src="https://media.licdn.com/dms/image/C4D03AQFwV0Pavmn6oA/profile-displayphoto-shrink_800_800/0/1550937327284?e=1698278400&v=beta&t=EPeRqQmtDKjjQPW9-i-t_b3SOst7CjCCD-ASFN4_ivI"
-        alt=""
-        sx={{ width: 150, height: 150, opacity: 0.8, ml: "auto", mr: "auto" }}
-      />
+      <Avatar sx={{ width: 150, height: 150, opacity: 0.8 }}>
+        <Image
+          src="https://media.licdn.com/dms/image/C4D03AQFwV0Pavmn6oA/profile-displayphoto-shrink_800_800/0/1550937327284?e=1698278400&v=beta&t=EPeRqQmtDKjjQPW9-i-t_b3SOst7CjCCD-ASFN4_ivI"
+          alt=""
+          style={{ width: "100%", height: "100%" }}
+        />
+      </Avatar>
       <Typography variant="h4" textAlign="center">
         Welcome to Kevin Morris's personal site.
       </Typography>
