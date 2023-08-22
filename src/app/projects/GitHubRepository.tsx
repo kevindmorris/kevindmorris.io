@@ -37,7 +37,7 @@ export default function GitHubRepository(repo: GitHubRepositoryObject) {
             })}
           </Typography>
         }
-        sx={{ "& .MuiListItemSecondaryAction-root": { top: "25%" } }}
+        sx={{ "& .MuiListItemSecondaryAction-root": { top: 15 } }}
       >
         <ListItemText
           primary={
