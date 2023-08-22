@@ -186,6 +186,7 @@ export default function NavigationHeader() {
             borderBottom: "1px solid",
             borderColor: theme.palette.divider,
             display: { sm: "block", md: "none" },
+            zIndex: theme.zIndex.appBar,
           }}
         >
           <List

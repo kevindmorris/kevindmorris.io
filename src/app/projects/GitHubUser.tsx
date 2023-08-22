@@ -75,7 +75,6 @@ export default function GitHubUser(user: GitHubUserObject) {
           </Paper>
         </Link>
       </div>
-      <Divider sx={{ display: { xs: "none", sm: "none", md: "block" } }} />
       <Link
         href="https://github.com/kevindmorris"
         target="_blank"

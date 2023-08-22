@@ -2,50 +2,83 @@
 
 import React from "react";
 import GitHubRepository from "./GitHubRepository";
-import { Divider, List, Stack } from "@mui/material";
+import {
+  CircularProgress,
+  Divider,
+  List,
+  Stack,
+  TextField,
+} from "@mui/material";
 import GitHubRepositoryObject from "./GitHubRepositoryObject";
 import GitHubUserObject from "./GitHubUserObject";
 import GitHubUser from "./GitHubUser";
 
-async function fetchRepositories() {
-  const response = await fetch(
-    "https://api.github.com/users/kevindmorris/repos"
-  );
-  const data = await response.json();
-  console.log(data);
-}
-
 export default function Page() {
-  const [user, setUser] = React.useState<GitHubUserObject>();
+  const [loading, setLoading] = React.useState(false);
+  const [user, setUser] = React.useState<GitHubUserObject>({
+    avatar_url: "",
+    bio: "",
+    followers: 0,
+    html_url: "",
+    login: "",
+    name: "",
+    public_repos: 0,
+  });
   const [repos, setRepos] = React.useState<GitHubRepositoryObject[]>([]);
+  const [value, setValue] = React.useState<string>("");
 
   React.useEffect(() => {
     (async () => {
-      const response = await fetch(
+      setLoading(true);
+      const responseRepos = await fetch(
         "https://api.github.com/users/kevindmorris/repos"
       );
-      const newRepos = await response.json();
+      const newRepos = await responseRepos.json();
       newRepos.sort((a: GitHubRepositoryObject, b: GitHubRepositoryObject) => {
         const A = new Date(a.updated_at).valueOf();
         const B = new Date(b.updated_at).valueOf();
         return B - A;
       });
       setRepos(newRepos);
-    })();
 
-    (async () => {
-      const response = await fetch("https://api.github.com/users/kevindmorris");
-      const newUser = await response.json();
+      const responseUser = await fetch(
+        "https://api.github.com/users/kevindmorris"
+      );
+      const newUser = await responseUser.json();
       setUser(newUser);
+      setLoading(false);
     })();
   }, []);
 
+  const filteredRepos = React.useMemo(
+    () =>
+      repos.filter(
+        (repos) =>
+          repos.name.includes(value) ||
+          (repos.description &&
+            repos.description.toLowerCase().includes(value)) ||
+          repos.topics.some((topic) => topic.toLowerCase().includes(value))
+      ),
+    [value, repos]
+  );
+
+  if (loading) return <CircularProgress />;
+
   return (
     <>
-      {user ? <GitHubUser {...user} /> : null}
+      <GitHubUser {...user} />
+      <TextField
+        value={value}
+        onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+          setValue(event.target.value);
+        }}
+        variant="standard"
+        placeholder="Filter Repositories..."
+        fullWidth
+      />
       <List>
-        {repos.map((r) => (
-          <GitHubRepository key={r.id} {...r} />
+        {filteredRepos.map((repo) => (
+          <GitHubRepository key={repo.id} {...repo} />
         ))}
       </List>
     </>
