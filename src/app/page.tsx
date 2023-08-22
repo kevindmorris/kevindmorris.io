@@ -83,7 +83,7 @@ export default function Page() {
         />
       </Avatar>
       <Typography variant="h4" textAlign="center">
-        Welcome to Kevin Morris's personal site.
+        Welcome to the personal site of Kevin Morris.
       </Typography>
       <Typography variant="h6" textAlign="center">
         I work as a Software Developer and Data Scientist who enjoys building
