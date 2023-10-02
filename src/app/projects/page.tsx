@@ -27,8 +27,8 @@ export default function Page() {
       );
       const newRepos = await responseRepos.json();
       newRepos.sort((a: GitHubRepositoryObject, b: GitHubRepositoryObject) => {
-        const A = new Date(a.updated_at).valueOf();
-        const B = new Date(b.updated_at).valueOf();
+        const A = new Date(a.pushed_at).valueOf();
+        const B = new Date(b.pushed_at).valueOf();
         return B - A;
       });
       setRepos(newRepos);
